@@ -1,0 +1,49 @@
+@use "../../styles/colors";
+
+.content {
+  max-width: 1440px;
+  width: 100%;
+  padding: 5rem 2rem;
+  color: white;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 2rem;
+  gap: 2rem;
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  .icons {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    &:nth-of-type(1) {
+      margin-bottom: 3rem;
+    }
+  }
+  .icon {
+    font-size: 3rem;
+    transition: 0.2s all ease;
+    &:hover {
+      transform: translateY(-3px) scale(1.05);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    align-items: center;
+    .right {
+      text-align: center;
+    }
+  }
+  .icons {
+    justify-content: center;
+  }
+}

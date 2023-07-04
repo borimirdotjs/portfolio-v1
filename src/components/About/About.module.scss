@@ -1,0 +1,42 @@
+@use "../../styles/colors";
+
+.container {
+  background-color: white;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  max-width: 1440px;
+  width: 100%;
+  padding: 5rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.left {
+  max-width: 526px;
+  .helloworld {
+    font-family: "Fira Code", monospace;
+    font-weight: 600;
+    color: #ca8500;
+  }
+  p {
+    color: colors.$main-p;
+    span {
+      font-size: 1.1rem;
+    }
+    .emoji {
+      font-size: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+}

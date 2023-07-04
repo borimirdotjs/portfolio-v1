@@ -1,0 +1,48 @@
+@use "../../styles/colors";
+
+.container {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.content {
+  max-width: 1440px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  .scrollup {
+    font-size: 2rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.content_items {
+  transition: all 0.1s ease;
+  font-size: 0.7rem;
+  &:hover {
+    color: colors.$main-p;
+    cursor: pointer;
+    transform: scale(1.03);
+  }
+  a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  span {
+    text-align: center;
+    font-weight: 500;
+  }
+}

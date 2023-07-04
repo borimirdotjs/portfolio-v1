@@ -1,0 +1,77 @@
+@use "../../styles/colors";
+
+.container {
+  background-color: white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  max-width: 1440px;
+  width: 100%;
+  padding: 5rem 2rem;
+}
+
+.work {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 3rem;
+  &:nth-child(1) {
+    margin-top: 3rem;
+  }
+  &:nth-child(2) {
+    .right {
+      grid-row: 1;
+    }
+  }
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 600px;
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+    p {
+      color: colors.$main-p;
+    }
+    span {
+      font-family: "Fira Code";
+      color: colors.$main-blue;
+    }
+    .buttons {
+      display: flex;
+      gap: 1rem;
+    }
+  }
+  .right {
+    max-width: 620px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .work {
+    grid-template-columns: 1fr;
+    text-align: center;
+    align-items: center;
+    .buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &:nth-of-type(2) {
+      .right {
+        grid-row: 2;
+      }
+    }
+    img {
+      margin-top: 2rem;
+    }
+  }
+}

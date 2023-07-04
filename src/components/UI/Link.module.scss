@@ -1,0 +1,54 @@
+@use "../../styles/colors";
+
+.container {
+}
+
+.link {
+  color: colors.$main-black;
+  text-decoration: none;
+  outline: 2px solid colors.$main-black;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 200px;
+  &::before {
+    content: "";
+    height: 100%;
+    width: 5%;
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    background: colors.$main-black;
+    transition: 0.3s all ease-in-out;
+  }
+  &::after {
+    content: attr(data-content);
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    &:hover {
+      color: white;
+    }
+  }
+
+  &:hover {
+    color: #ffffff;
+    &:before {
+      width: 100%;
+    }
+  }
+}
