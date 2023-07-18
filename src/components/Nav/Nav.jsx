@@ -4,6 +4,7 @@ import { Squash as Hamburger } from "hamburger-react";
 import { useState, useEffect } from "react";
 import { useAnimate, usePresence, stagger, motion } from "framer-motion";
 import { handleScroll } from "../../utils/utils";
+import disableScroll from "disable-scroll";
 
 const Nav = ({ aboutRef, contactRef, skillsRef, projectsRef }) => {
   const [isOpen, setIsOpen] = useState(window.innerWidth >= 768 ? true : false);
@@ -45,6 +46,13 @@ const Nav = ({ aboutRef, contactRef, skillsRef, projectsRef }) => {
     if (window.innerWidth <= 768) {
       setIsOpen(false);
     }
+  };
+
+  const handleResume = () => {
+    window.open(
+      "https://borimirkitev.com/Borimir_Kitev_-_Front_end_Developer.pdf",
+      "_blank"
+    );
   };
 
   return (
@@ -102,7 +110,9 @@ const Nav = ({ aboutRef, contactRef, skillsRef, projectsRef }) => {
             Contact
           </motion.li>
         </ul>
-        <button className={styles.resume}>Resume</button>
+        <button className={styles.resume} onClick={handleResume}>
+          Resume
+        </button>
       </motion.div>
     </nav>
   );

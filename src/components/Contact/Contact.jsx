@@ -66,7 +66,7 @@ const Contact = ({ contactRef }) => {
           <form ref={formRef} onSubmit={handleSubmit}>
             <label htmlFor="email">Your Email</label>
             <input
-              type="text"
+              type="email"
               id="email"
               name="from_name"
               value={email}

@@ -13,7 +13,11 @@ const Footer = () => {
           ☝️
         </span>
         <div className={styles.content_items}>
-          <a href="https://github.com/" target="_blank" rel="noreferrer">
+          <a
+            href="https://github.com/borimirdotjs/portfolio-v1"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img src={blackLogo} alt="black logo" />
             <span>Designed & Built by Borimir Kitev</span>
           </a>

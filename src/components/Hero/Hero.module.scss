@@ -1,7 +1,8 @@
 @use "../../styles/colors";
 
 .container {
-  height: calc(100vh - 110px);
+  min-height: calc(100vh - 110px);
+  position: relative;
   width: 100%;
   max-width: 1440px;
   display: grid;
@@ -49,24 +50,75 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  width: 100%;
   img {
-    max-width: 300px;
     height: 100%;
+  }
+}
+
+.blob {
+  position: relative;
+  width: clamp(200px, 550px, 600px);
+  height: clamp(200px, 550px, 600px);
+  background-color: colors.$main-yellow;
+  border-radius: 66% 33% 66% 33% / 33% 33% 66% 66%;
+  animation: border_animation 6s linear infinite;
+  -webkit-animation: border_animation 6s linear infinite;
+  @media screen and (max-width: 768px) {
+    max-width: 250px;
+    width: clamp(150px, 250px, 300px);
+    height: clamp(150px, 250px, 300px);
+  }
+
+  .avatar {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes border_animation {
+  0%,
+  100% {
+    border-radius: 44% 56% 66% 66% / 45% 45% 55% 55%;
+    transform: translate3d(0, 0, 0) rotateZ(0.01deg);
+  }
+  33% {
+    border-radius: 66% 33% 44% 55% / 33% 22% 77% 66%;
+    transform: translate3d(0, 5px, 0) rotateZ(0.01deg);
+  }
+  50% {
+    transform: translate3d(0, 0, 0) rotateZ(0.01deg);
+  }
+  66% {
+    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+    transform: translate3d(0, -3px, 0) rotateZ(0.01deg);
   }
 }
 
 @media screen and (max-width: 768px) {
   .container {
     grid-template-columns: 1fr;
-  }
-
-  .left {
-    .title {
-      font-size: 1.5rem;
-      line-height: 3rem;
-      .name {
-        font-size: 3rem;
+    justify-content: space-around;
+    .left {
+      width: 100%;
+      order: 1;
+      text-align: center;
+      .title {
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+        font-weight: 300;
+        .name {
+          font-size: 2.45rem;
+          margin-bottom: 2rem;
+        }
       }
+    }
+    .right {
+      width: 100%;
+      order: -1;
     }
   }
 }

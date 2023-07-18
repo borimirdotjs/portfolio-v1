@@ -72,6 +72,18 @@ export const getIconInfo = (iconName) => {
         description:
           "GitHub is a widely used web-based platform that serves as a central hub for version control and collaboration in software development. It allows developers to store their code repositories, track changes to their codebase over time, and collaborate with other developers on projects.",
       };
+    case "Express":
+      return {
+        title: "Express",
+        description:
+          "Minimal and flexible web application framework for Node.js, designed to simplify the process of building web applications and APIs. It provides a robust set of features and a straightforward, unopinionated approach to handling HTTP requests and responses.",
+      };
+    case "Mongoose":
+      return {
+        title: "Mongoose",
+        description:
+          "A library for Node.js and MongoDB, which provides a straightforward and convenient way to interact with MongoDB databases. It acts as a bridge between the application code and the MongoDB database, simplifying the process of defining schemas, creating models, and performing database operations.",
+      };
 
     default:
       return {

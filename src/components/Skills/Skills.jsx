@@ -2,7 +2,13 @@ import styles from "./Skills.module.scss";
 import { FaHtml5, FaCss3Alt, FaSass, FaGithub } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
 import { FiFigma } from "react-icons/fi";
-import { SiJest, SiReactquery, SiFramer } from "react-icons/si";
+import {
+  SiJest,
+  SiReactquery,
+  SiFramer,
+  SiMongoose,
+  SiExpress,
+} from "react-icons/si";
 import { TbBrandRedux, TbBrandReact } from "react-icons/tb";
 import { BiLogoTypescript } from "react-icons/bi";
 import { useState } from "react";
@@ -152,6 +158,24 @@ const Skills = ({ skillsRef }) => {
                 onMouseEnter={() => {
                   setIsVisible(true);
                   handleIconHover("Framer Motion");
+                }}
+                onMouseLeave={handleMouseOut}
+              />
+              <SiMongoose
+                className={styles.icon}
+                alt="mongoose"
+                onMouseEnter={() => {
+                  setIsVisible(true);
+                  handleIconHover("Mongoose");
+                }}
+                onMouseLeave={handleMouseOut}
+              />
+              <SiExpress
+                className={styles.icon}
+                alt="express"
+                onMouseEnter={() => {
+                  setIsVisible(true);
+                  handleIconHover("Express");
                 }}
                 onMouseLeave={handleMouseOut}
               />
